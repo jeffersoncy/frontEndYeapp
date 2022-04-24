@@ -35,10 +35,14 @@
 
 
 </style>
+
 <input type="hidden" #selection>
+<div class="container" style="margin-top: 40px;">
+  <div class="row">
+    <div class="col-sm-7">
 <!-- Terminal -->
 <div class="terminal" [ngSwitch]="selection.value">
-  <pre *ngSwitchDefault>ng generate component xyz
+  <pre *ngSwitchDefault>
   <div>
     <qr-scanner
     [debug]="false"
@@ -55,4 +59,40 @@
   <pre *ngSwitchCase="'test'">ng test</pre>
   <pre *ngSwitchCase="'build'">ng build</pre>
 </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="card" style="width: 20rem;" *ngIf="bandera=='True'; else textoInformativo">
+        <img src="../../../assets/Productos/{{producto.rutaimagen}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{producto.nomProducto}}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Categoría: {{producto.tipo}}</li>
+          <li class="list-group-item">Estado: {{producto.estado}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link"><div class="btncar" style="float:left; width:45%;  margin-left: 5px;" display="inline-block">
+            <button  class="btn btn-success "
+                style="margin-left: 5px;">Cambiar estado</button>
+          </div></a>
+          <a href="#" class="card-link"><div class="btncar" style="float:right; width:45%;  margin-right: 5px;" display="inline-block">
+            <button  class="btn btn-secondary "
+                style="margin-right: 5px;">Eliminar producto</button>
+          </div></a>
+        </div>
+      </div>
+    </div>
+    <ng-template #textoInformativo>
+      <div class="card text-white bg-danger mb-3" style="max-width: 18rem; margin-top: 120px;">
+        <div class="card-header">Aviso</div>
+        <div class="card-body">
+          <h5 class="card-title">Escanee el código QR</h5>
+          <p class="card-text">Para realizar esta operación muestre el código QR en frente de la camara web de su dispositivo.</p>
+        </div>
+      </div>
+     </ng-template>
+  </div>
+</div>
+
+
 
