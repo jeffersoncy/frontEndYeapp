@@ -34,7 +34,7 @@ export class RegistroComponent implements OnInit {
   }
 
   guardar(){
-
+    this.producto.estado="Bodega";
     for (let index = 0; index < this.cantidad; index++) {
       this.service.newProducto(this.producto).subscribe(data=>
         {

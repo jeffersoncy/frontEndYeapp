@@ -61,7 +61,8 @@
 </div>
     </div>
     <div class="col-sm-5">
-      <div class="card" style="width: 20rem;" *ngIf="bandera=='True'; else textoInformativo">
+      <div class="card" style="width: 20rem; margin-top: 80px;" *ngIf="bandera=='True'; else textoInformativo">
+        <button type="button" class="btn btn-success" (click)="reload()">Volver a escanear</button>
         <img src="../../../assets/Productos/{{producto.rutaimagen}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{producto.nomProducto}}</h5>
