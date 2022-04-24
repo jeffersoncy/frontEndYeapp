@@ -126,11 +126,11 @@
                 <div class="galleryHome" *ngFor="let producto of productosfiltrado"
                     style="margin-top: 20px;">
                     <div >
-                        <div class="imgProd"><img src="../../../assets/Productos/"{{produto.rutaimagen}} width="200px"
+                        <div class="imgProd"><img src="../../../assets/Productos/{{producto.rutaimagen}}" width="200px"
                                 height="150px" /></div>
                                 <div class="desc " style="text-align: center;">{{ producto.nomProducto}} </div>
                                 <div class="desc " style="text-align: center;">{{ producto.tipo}} </div>
-                                <div class="desc " style="text-align: center;">En bodega</div>
+                                <div class="desc " style="text-align: center;">{{producto.estado}}</div>
                                 <div class="imgProd" style="text-align: center;">
                                   <ngx-qrcode
                                     [elementType]="elementType"

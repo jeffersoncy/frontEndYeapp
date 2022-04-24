@@ -34,17 +34,23 @@ export class RegistroComponent implements OnInit {
   }
 
   guardar(){
-    this.service.newProducto(this.producto).subscribe(data=>
-      {
-      if (this.producto.compareTo(data)) {
-        this.producto = data;
-        alert("Producto añadido correctamente");
-        this.router.navigate(["listar"]);
-      }else{
-        alert("Error al añadir el producto");
-        this.router.navigate(["vistaregistrar"]);
-      }
-    });
+
+    for (let index = 0; index < this.cantidad; index++) {
+      this.service.newProducto(this.producto).subscribe(data=>
+        {
+        if (this.producto.compareTo(data)) {
+          this.producto = data;
+          console.log("Producto añadido correctamente");
+          this.router.navigate(["listar"]);
+        }else{
+         console.log("Error al añadir el producto");
+          this.router.navigate(["vistaregistrar"]);
+        }
+      });
+
+    }
+
+
   }
 
   atras(){
