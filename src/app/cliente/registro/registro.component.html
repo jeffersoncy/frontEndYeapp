@@ -1,0 +1,54 @@
+<div class="container col-md-6" style="margin-top: 10px;">
+    <div class="card">
+        <div class="card header">
+            <h3>Agregar Producto</h3>
+        </div>
+        <div class="card-body">
+            <form action="" class="was-validated">
+                <div class="form-group">
+                    <label for="nomProducto">Nombre del producto:</label>
+                    <input type="text" class="form-control" [(ngModel)]="producto.nomProducto" name="nomProducto"
+                        ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("nomProducto")}}</div>
+                </div>
+
+                <div class="cmb">
+                    <label for="tipo">Seleccione el tipo de producto</label>
+                    <br>
+                    <select name="miselect" [(ngModel)]="producto.tipo">
+                        <option *ngFor="let tipo of tipos" >{{tipo}}</option>
+                    </select>
+                    <br><br><br>
+                </div>
+
+                <!--  Preview de la imagen -->
+                <div *ngIf="previsualizacion">
+                    <img [src]="previsualizacion" alt="" width="200px">
+                </div>
+                <div class="form-group">
+                    <label for="rutaImagen">Subir Imagen:</label>
+                    <input (change)="capturarFile($event)" type="file" class="form-control-file border"
+                        [(ngModel)]="producto.rutaimagen" name="rutaImagen1" id="img1" ngModel required>
+                    <div class="valid-feedback">Valido.</div>
+
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("rutaImagen")}}</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" class="form-control" [(ngModel)]="cantidad" name="cantidad" ngModel
+                        required>
+                    <div class="valid-feedback">Valido.</div>
+                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    <div class="alert">{{mensajeError("cantidad")}}</div>
+                </div>
+
+                <button (click)="guardar()" class="btn btn-danger">Guardar</button>
+                <button (click)="atras()" class="btn btn-danger" style="margin-left: 10px;">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>

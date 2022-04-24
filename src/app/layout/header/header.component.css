@@ -1,0 +1,115 @@
+.banner {
+    width: 100%;
+    height: 100px;
+    padding: 0px;
+    background-color: #0B3954;  
+}
+
+.logo{
+    cursor: pointer;
+    width:100px;
+    height:100px;
+}
+
+.bnlogo {
+    background-size: cover;
+    width: 100px;
+    height: 100%;
+    margin-left: 20px;
+    float: left;
+}
+
+.bncarrito {
+    width: 60px;
+    height: 100%;
+    margin-right: 20px;
+    float: right;
+    justify-content: center;
+
+}
+
+.bnuser {
+    width: 110px;
+    height: 100%; 
+    float: right;
+    text-align: right;
+    color: white;
+}
+
+
+
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.texto-encima{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.centrado{
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    transform: translate(-80%, -80%);
+}
+  
+.eye2{
+    position:absolute;
+    height:50px;
+    width:50px;
+    top: 30%;
+    left : 90%;
+    z-index: 1;
+  }
+
+  .miPedido{
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 35px;
+    width: 120px;
+    background: #55b02f;
+    color: white;
+}
+
+.imagen:hover {
+    border: 1px solid #55b02f;
+    left: 0px;
+    width: 50px; 
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .imagen {
+      margin-top: 22px;
+      margin-left: auto;
+      margin-right: auto;
+      cursor: pointer;
+      width: 45px;
+  }
+
+  .imagenuser:hover {
+    border: 1px solid aqua;
+    left: 0px;
+    width: 50px; 
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .imagenuser {
+    margin-right: auto;
+    margin-top: 22px;
+    margin-left: auto;
+    cursor: pointer;
+    width: 45px;
+  }
+
+  .modal-header{
+    background-color: #343738;
+    color: white;
+    margin-top: 0px;
+  }

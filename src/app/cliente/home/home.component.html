@@ -1,0 +1,175 @@
+<!--<div *ngIf="categoria == 'general'">
+    <div class="fakeimg">
+        <img src="../../../assets/Logos/banner.png" class="fakeimg">
+    </div>
+</div>-->
+<div *ngIf="categoria == 'Frutas y verduras'">
+    <div class="fakeimg">
+        <img src="../../../assets/banner-07.jpeg" class="fakeimg">
+    </div>
+</div>
+<div *ngIf="categoria == 'Pollo, Carne y Pescados'">
+    <div class="fakeimg">
+        <img src="../../../assets/banner-08.png" class="fakeimg">
+    </div>
+</div>
+<div *ngIf="categoria == 'Huevos y derivados lacteos'">
+    <div class="fakeimg">
+        <img src="../../../assets/banner-09.jpg" class="fakeimg">
+    </div>
+</div>
+<div *ngIf="categoria == 'Despensa'">
+    <div class="fakeimg">
+        <img src="../../../assets/banner-10.jpg" class="fakeimg">
+    </div>
+</div>
+<div class="container" style="margin-top: 30px; margin-left: 108px;">
+    <div class="row">
+        <div class="col-sm-9" >
+            <div class="form-group">
+                <label for="sel1">Filtrar por categoría:</label><br><br>
+                <select class="form-control" id="sel1">
+                  <option>Todos los productos</option>
+                  <option>Televisores</option>
+                  <option>Celulares</option>
+                  <option>Computadores</option>
+                  <option>Electrodomesticos</option>
+                </select>
+              </div>
+        </div>
+        <div class="col-sm-3" style="text-align: center; margin-top: 50px;" >
+            Ver: <input type="image" src="../../../assets/Logos/image-outline.png" routerLink="/listar" routerLinkActive="active" height="30" width="30"/>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+            <div class="col-sm-10" *ngIf="categoria == 'general'; else filtro">
+                <div class="galleryHome" *ngFor="let producto of productos"
+                    style="margin-top: 20px;">
+                    <div >
+                        <div class="imgProd"><img src="../../../assets/Productos/{{producto.rutaimagen}}" width="200px"
+                                height="150px" /></div>
+                        <div class="desc " style="text-align: center;">{{ producto.nomProducto}} </div>
+                        <div class="desc " style="text-align: center;">Categoría: {{ producto.tipo}} </div>
+                        <div class="desc " style="text-align: center;">Estado: {{producto.estado}}</div>
+                        <div class="imgProd" style="text-align: center;"><div class="imgProd" style="text-align: center;">
+                          <ngx-qrcode
+                            [elementType]="elementType"
+                            [errorCorrectionLevel]="correctionLevel"
+                            value="{{producto.id}}"
+                            cssClass="coolQRCode">
+                          </ngx-qrcode>
+                        </div></div> <br>
+                        <div class="quantity " style="display: inline">
+                            <div class="btncar" style="float:left; width:47%;  margin-left: 5px;" display="inline-block">
+                                <button  class="btn btn-success "
+                                    style="margin-left: 5px;">Cambiar estado</button>
+                            </div>
+                            <div class="btncar" style="float:right; width:47%;  margin-right: 5px;" display="inline-block">
+                                <button  class="btn btn-secondary "
+                                    style="margin-right: 5px;">Eliminar producto</button>
+                            </div>
+                        </div>
+                        <!--
+<div class="quantity " style="display: inline">
+                            <div style="float:left; width: 25%; margin-left: 6px;" display="inline-block">
+                                <button class="disminuir" (click)="disminuirInput(inputCantidad)">-</button>
+                                <input #inputCantidad type="number" class="cantidad" value="1" min="1" max="20"
+                                    (change)="actualizarPrecio(inputCantidad)">
+                                <button class="aumentar" (click)="aumentarInput(inputCantidad)">+</button>
+                            </div>
+                            <div class="btncar" style="float:right; width:68%;  margin-right: 6px;" display="inline-block">
+                                <button (click)="agregarItem(producto,inputCantidad)" class="btn btn-success "
+                                    style="margin-left: 30px;">Add Carrito</button>
+                            </div>
+                        </div>
+                        -->
+
+                    </div>
+                    <!-- <ng-template #productos style="margin-bottom:33px">
+                        <img class="gris" src="../../../../assets/Productos/{{producto.rutaImagen}}" alt="Prod2" width="600"
+                            height="400">
+                        <div class="desc text-muted">{{ producto.nomProducto}} </div>
+                        <div class="desc text-muted">${{ producto.precio}}</div>
+                        <div class="quantity " style="display: inline">
+                            <div style="float:center; width:100%;" display="inline-block">
+                                <button class="btn btn-secondary disabled" style="margin-left: 51px;">Sin
+                                    unidades</button>
+                            </div>
+                        </div>
+                    </ng-template> -->
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <h2 style="margin-top: 30px;">Filtros</h2>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item ">
+                        <a class="nav-link" (click)="tipo(productos,'general')">Todos los productos</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" (click)="tipo(productos,'Televisores')">Televisores</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" (click)="tipo(productos,'Celulares')">Celulares</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="tipo(productos,'Computadores')">Computadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="tipo(productos,'Electrodomesticos')">Electrodomesticos</a>
+                    </li>
+                </ul>
+            </div>
+        <ng-template #filtro style="margin-bottom:33px">
+            <div class="col-sm-10">
+                <div class="galleryHome" *ngFor="let producto of productosfiltrado"
+                    style="margin-top: 20px;">
+                    <div >
+                        <div class="imgProd"><img src="../../../assets/Productos/"{{produto.rutaimagen}} width="200px"
+                                height="150px" /></div>
+                                <div class="desc " style="text-align: center;">{{ producto.nomProducto}} </div>
+                                <div class="desc " style="text-align: center;">{{ producto.tipo}} </div>
+                                <div class="desc " style="text-align: center;">En bodega</div>
+                                <div class="imgProd" style="text-align: center;">
+                                  <ngx-qrcode
+                                    [elementType]="elementType"
+                                    [errorCorrectionLevel]="correctionLevel"
+                                    value="{{producto.id}}"
+                                    cssClass="coolQRCode">
+                                  </ngx-qrcode>
+                                </div> <br>
+                        <div class="quantity " style="display: inline">
+                            <div class="btncar" style="float:left; width:47%;  margin-left: 5px;" display="inline-block">
+                                <button  class="btn btn-success "
+                                    style="margin-left: 5px;">Cambiar estado</button>
+                            </div>
+                            <div class="btncar" style="float:right; width:47%;  margin-right: 5px;" display="inline-block">
+                                <button  class="btn btn-secondary "
+                                    style="margin-right: 5px;">Eliminar producto</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <ng-template #productos style="margin-bottom:33px">
+                        <img class="gris" src="../../../../assets/Productos/{{producto.rutaImagen}}" alt="Prod2" width="600"
+                            height="400">
+                        <div class="desc text-muted">{{ producto.nomProducto}} </div>
+                        <div class="desc text-muted">${{ producto.precio}}</div>
+                        <div class="quantity " style="display: inline">
+                            <div style="float:center; width:100%;" display="inline-block">
+                                <button class="btn btn-secondary disabled" style="margin-left: 51px;">Sin
+                                    unidades</button>
+                            </div>
+                        </div>
+                    </ng-template> -->
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+
+
+<div class="container">
+  <h1>QRCODE GENERATOR</h1>
+
+</div>

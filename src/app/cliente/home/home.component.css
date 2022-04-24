@@ -1,0 +1,167 @@
+
+.btn-success { background-color: #0B3954 !important; }
+.btn-secondary { background-color: #C81D25 !important; }
+
+.col-sm-10 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.galleryHome {
+    border-radius: 10px;
+    border: #087E8B 2px solid;
+}
+
+.galleryHome:hover {
+    transform: scale(1.04);
+    transition: all .3s ease-in-out;
+
+}
+
+.imgProd {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 150px;
+}
+
+.btncar {
+    margin-bottom: 10%;
+}
+
+
+.miPedido{
+    margin-left: 80%;
+    margin-top: 10px;
+    border-radius: 20px;
+    height: 35px;
+    width: 120px;
+    background: #FF0000;
+    color: white;
+}
+
+.circle{
+    width: 25px;
+    height: 25px;
+    background-color: #ffaa00;
+    border-radius: 100%;
+    position: absolute;
+    margin-left: 995px;
+}
+
+.circle:disabled,
+.circle[disabled]{
+    background: transparent;
+    color: transparent;
+}
+
+.miPedido:disabled,
+.miPedido[disabled]{
+    background: gray;
+    color: rgba(53, 44, 44, 0.767);
+}
+
+.modal-header{
+    background: #FF0000;
+}
+
+.cantidad{
+    border-radius: 15px;
+    border: 1.5px solid black;
+    height: 35px;
+    width: 60px;
+    margin-right: 80px;
+    text-align: center;
+    border-color: #55b02f;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.disminuir{
+    border: 0px;
+    background:transparent;
+    position: absolute;
+    margin-left: 5px;
+    margin-top: 3px;
+    color: #343738;
+}
+
+.aumentar{
+    border: none;
+    background:none;
+    position: absolute;
+    margin-left: 37px;
+    margin-top: -31px;
+    color: #343738;
+}
+
+.alert{
+    color: rgb(253, 0, 0);
+    text-align: left;
+    margin-top: -12px;
+    font: 12px Verdana; 
+}
+.modal-header{
+    color: #ffffff
+}
+
+.gris {
+    filter: grayscale(1);
+}
+
+.fakeimg{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-item:active{
+    color: black;
+    background:#28a745;
+}
+
+.nav-link:hover{
+    background:#C81D25;
+    color:#ffffff;
+}
+
+.nav-link{
+    color:#333738;
+    text-shadow: 0px 0px #343738;
+    cursor: pointer;
+}
+
+.nav-link:active{
+    color:#55b02f;
+    text-shadow: 1px 1px 3px #55b02f;
+    font-weight: bold;
+}
+
+@media screen and (max-width:800px){
+    
+    .fakeimg{
+        height: 120px;
+    }
+
+    .col-sm-2{
+        min-width:400px;
+    }
+
+    .nav-pills{
+        min-width:400px;
+    }
+
+    #container{
+    width:auto;
+    } 
+   
+    header h1 a{
+    width:auto;
+    }
+   }
